@@ -15,7 +15,7 @@ this site only serves the packages.
 | `/facchini.asc` | the signing key of every repository (RSA 4096, fingerprint `9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA`) |
 | `/versoes.txt` | the packages published |
 
-Every folder, the home page included, is a plain listing of its files, like packages.microsoft.com. The home page also has a short welcome text (`boas-vindas.html`, three languages) saying the site is for package managers and pointing to each software's installation guide; there is no other page.
+Every folder, the home page included, is a listing of its files, like packages.microsoft.com, in the look of facchini.eti.br: the header with the logo and language flags (`pagina/cabecalho.html`), the style (`pagina/estilo.css`) and the language script (`pagina/idioma.js`) go inside each page. The home page also has a short welcome text (`pagina/boas-vindas.html`) saying the site is for package managers and pointing to each software's installation guide. Each text exists in Portuguese, Spanish and English, and the page shows one: the one chosen with a flag (kept for every page), or else the browser's language, or else English. There is no other page.
 
 ## How it is built
 
@@ -38,7 +38,7 @@ the owner's offline backup. It is imported into a temporary GPG home that is del
 
 1. Add its GitHub repository to `PROJETOS` in `baixar.sh`; the repository's name becomes its
    folder. Its releases must attach amd64 `.deb` and `.rpm` packages and a `SHA256SUMS`.
-2. Add a link to its installation guide in `boas-vindas.html` (the three languages).
+2. Add a link to its installation guide in `pagina/boas-vindas.html` (the three languages).
 3. In its documentation, the installation commands: download `/<name>/deb/<name>.sources` into
    `/etc/apt/sources.list.d/`, or `/<name>/rpm/<name>.repo` into `/etc/yum.repos.d/` (dnf) or
    with `zypper addrepo`.

@@ -1,0 +1,46 @@
+/* The listing pages: facchini.eti.br's colors and fonts, light and dark, one column on phones. */
+:root {
+  --fundo: #f6f7fb; --superficie: #fff; --texto: #1d2129; --secundario: #5b6372;
+  --borda: #e2e5ec; --destaque: #0d6efd;
+  --sombra: 0 1px 2px rgb(16 24 40 / 6%), 0 8px 24px rgb(16 24 40 / 6%);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #0f1218; --superficie: #171b23; --texto: #e6e9ef; --secundario: #9aa3b2;
+    --borda: #2a303c; --destaque: #6ea8fe; --sombra: none; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif; }
+a { color: var(--destaque); }
+.largura { max-width: 48rem; margin: 0 auto; padding: 0 16px; }
+/* One language at a time: the one in <html data-idioma> (idioma.js). */
+[data-t] { display: none; }
+html[data-idioma="pt-BR"] [data-t]:lang(pt-BR),
+html[data-idioma="es"] [data-t]:lang(es),
+html[data-idioma="en"] [data-t]:lang(en) { display: revert; }
+
+.topo { background: var(--superficie); border-bottom: 1px solid var(--borda); }
+.topo-conteudo { display: flex; align-items: center; justify-content: space-between; gap: .5rem 1rem; min-height: 4rem; }
+.marca { display: inline-flex; align-items: center; gap: .65rem; color: var(--texto); text-decoration: none; }
+.marca svg { display: block; flex: none; }
+.marca-texto { display: flex; flex-direction: column; line-height: 1.15; }
+.marca-nome { font-weight: 800; font-size: 1.1rem; letter-spacing: -.01em; }
+.marca-lema { font-size: .78rem; color: var(--secundario); }
+/* The flags only work with JavaScript; without it the page stays in English. */
+.idiomas { display: inline-flex; gap: .35rem; visibility: hidden; }
+.js .idiomas { visibility: visible; }
+.idiomas button { display: inline-flex; padding: 2px; border: 1px solid transparent; border-radius: 4px; background: none; opacity: .55; cursor: pointer; }
+.idiomas button:hover, .idiomas button[aria-pressed="true"] { opacity: 1; }
+.idiomas button[aria-pressed="true"] { border-color: var(--borda); }
+.idiomas svg { display: block; border-radius: 2px; }
+
+h1 { font-size: 1.6rem; line-height: 1.2; margin: 2rem 0 1rem; overflow-wrap: anywhere; }
+h2 { font-size: 1.05rem; margin: 0 0 .3rem; }
+p { margin: 0; }
+.cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: 14px; box-shadow: var(--sombra); padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+.arquivos { list-style: none; margin: 0 0 3rem; padding: 0; background: var(--superficie); border: 1px solid var(--borda); border-radius: 14px; box-shadow: var(--sombra); overflow: hidden; }
+.arquivos li + li { border-top: 1px solid var(--borda); }
+.arquivos a { display: block; padding: .6rem 1.25rem; font: 15px/1.5 ui-monospace, "SF Mono", "Cascadia Mono", "Noto Sans Mono", "Liberation Mono", Menlo, Consolas, monospace; text-decoration: none; overflow-wrap: anywhere; }
+.arquivos a:hover { background: var(--fundo); }
