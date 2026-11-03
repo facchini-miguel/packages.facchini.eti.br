@@ -4,7 +4,8 @@
 #                the apt source with the key inside it (deb822)
 #   /<name>/rpm  a dnf/zypper repository, every package signed, and <name>.repo
 # plus /versoes.txt, the packages published (the hourly run compares it to skip a deploy), and
-# a plain listing (index.html) in every folder that has none.
+# a plain listing (index.html) in every folder, the home page included, like
+# packages.microsoft.com: how to install each software is in its own documentation.
 # Everything is signed with the private key in GPG_CHAVE_PRIVADA, which must be the one in
 # site/facchini.asc (the key clients trust). The key lives only in a temporary GNUPGHOME.
 set -euo pipefail
@@ -86,15 +87,16 @@ REPO
 
 # A plain listing of a folder, like a web server's (GitHub Pages has none).
 listagem() {
-  local pasta=$1 caminho=${1#_site} item tmp
+  local pasta=$1 caminho=${1#_site} item tmp acima='<a href="../">../</a><br>\n'
   tmp=$(mktemp)
   {
     printf '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
     printf '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-    printf '<title>%s</title>\n' "$caminho/"
+    printf '<title>packages.facchini.eti.br%s/</title>\n' "$caminho"
     printf '<style>body{font:15px/1.7 ui-monospace,monospace;margin:32px 16px}a{color:#0969da}'
     printf '@media(prefers-color-scheme:dark){body{background:#0d1117;color:#e6edf3}a{color:#4493f8}}</style>\n'
-    printf '</head>\n<body>\n<h1>%s</h1>\n<a href="../">../</a><br>\n' "$caminho/"
+    [ -n "$caminho" ] || acima=""
+    printf '</head>\n<body>\n<h1>packages.facchini.eti.br%s/</h1>\n%b' "$caminho" "$acima"
     for item in "$pasta"/*/; do
       [ -d "$item" ] && printf '<a href="%s/">%s/</a><br>\n' "$(basename "$item")" "$(basename "$item")"
     done
@@ -115,8 +117,8 @@ for pasta in pacotes/*/; do
   rpm_repositorio "$nome"
 done
 (cd pacotes && ls -- */*.deb */*.rpm) | sort >_site/versoes.txt
-find _site -mindepth 1 -type d | sort -r | while read -r pasta; do
-  [ -e "$pasta/index.html" ] || listagem "$pasta"
+find _site -type d | sort -r | while read -r pasta; do
+  listagem "$pasta"
 done
 echo "Assinado com $CHAVE:"
 cat _site/versoes.txt
