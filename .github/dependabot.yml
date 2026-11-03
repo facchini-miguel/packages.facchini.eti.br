@@ -1,0 +1,18 @@
+# Dependabot: pull requests that update the actions of the publishing workflow (pinned to a
+# commit with the tag in a comment: Dependabot updates both). Security fixes come as soon as an
+# advisory is published; version updates come monthly, grouped in one pull request.
+#
+# 7-day cooldown (as in Kaladrius, decision 143): a version update only proposes a release
+# published at least 7 days ago, because a compromised release is usually pulled within hours
+# or days. Security updates ignore the cooldown and still come right away.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    groups:
+      acoes:
+        patterns: ["*"]
