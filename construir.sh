@@ -94,9 +94,14 @@ listagem() {
     printf '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
     printf '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     printf '<title>packages.facchini.eti.br%s/</title>\n' "$caminho"
-    printf '<style>body{font:15px/1.7 ui-monospace,monospace;margin:32px 16px}a{color:#0969da}'
-    printf 'section{font-family:system-ui,sans-serif;max-width:760px}h2{font-size:1.05rem;margin:20px 0 4px}p{margin:0 0 8px}'
-    printf '@media(prefers-color-scheme:dark){body{background:#0d1117;color:#e6edf3}a{color:#4493f8}}</style>\n'
+    # The same text font as facchini.eti.br; a monospace font only for the file names, with
+    # Noto and Liberation before the generic one (on Linux, DejaVu Sans Mono, too wide).
+    printf '<style>body{font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;'
+    printf 'margin:32px auto;padding:0 16px;max-width:760px;background:#fff;color:#1f2328}a{color:#0969da}'
+    printf 'h1{font-size:1.5rem;font-weight:600;margin:0 0 8px;overflow-wrap:anywhere}h2{font-size:1.05rem;margin:20px 0 4px}p{margin:0 0 8px}'
+    printf 'hr{border:0;border-top:1px solid #d1d9e0;margin:24px 0 16px}'
+    printf 'body>a{font:15px/1.9 ui-monospace,"SF Mono","Cascadia Mono","Noto Sans Mono","Liberation Mono",Menlo,Consolas,monospace}'
+    printf '@media(prefers-color-scheme:dark){body{background:#0d1117;color:#e6edf3}a{color:#4493f8}hr{border-top-color:#3d444d}}</style>\n'
     printf '</head>\n<body>\n<h1>packages.facchini.eti.br%s/</h1>\n' "$caminho"
     if [ -z "$caminho" ]; then cat boas-vindas.html; else printf '%b' "$acima"; fi
     for item in "$pasta"/*/; do
