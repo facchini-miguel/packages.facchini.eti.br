@@ -22,8 +22,8 @@
   section + section { border-top: 1px solid var(--linha); margin-top: 48px; padding-top: 16px; }
   a { color: var(--link); }
   code { background: var(--codigo); padding: 2px 6px; border-radius: 4px; font-size: .9em; overflow-wrap: anywhere; }
-  pre { background: var(--codigo); padding: 12px 14px; border-radius: 6px; overflow-x: auto; font-size: .85rem; line-height: 1.5; }
-  pre code { background: none; padding: 0; overflow-wrap: normal; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--linha); vertical-align: top; }
 </style>
 </head>
 <body>
@@ -32,91 +32,38 @@
 
   <section id="pt" lang="pt-BR">
     <h1>Pacotes Linux</h1>
-    <p class="suave">Repositório de pacotes (apt, dnf e zypper) do software de <a href="https://www.facchini.eti.br">Miguel Facchini</a>. Hoje: o <a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a>, para servidores com processador Intel ou AMD de 64 bits.</p>
-    <p>Com o repositório adicionado, as versões novas chegam com as atualizações do próprio sistema (<code>sudo apt upgrade</code>, <code>sudo dnf upgrade</code> ou <code>sudo zypper update</code>). Antes de instalar, veja os <a href="https://kaladrius-docs.facchini.eti.br/pt-BR/installation/linux-package">sistemas aceitos e as perguntas da instalação</a>.</p>
-
-    <h2>Debian 13+ e Ubuntu 24.04+</h2>
-<pre><code>sudo apt install -y curl ca-certificates
-sudo install -d -m 0755 /etc/apt/keyrings
-sudo curl -fsSLo /etc/apt/keyrings/facchini.asc https://packages.facchini.eti.br/chave.asc
-echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/facchini.asc] https://packages.facchini.eti.br/deb stable main" | sudo tee /etc/apt/sources.list.d/facchini.list
-sudo apt update
-sudo apt install kaladrius</code></pre>
-    <p>As perguntas da instalação aparecem na hora.</p>
-
-    <h2>Fedora, Red Hat Enterprise Linux, Rocky Linux e AlmaLinux</h2>
-<pre><code>sudo curl -fsSLo /etc/yum.repos.d/facchini.repo https://packages.facchini.eti.br/rpm/facchini.repo
-sudo dnf install kaladrius
-sudo kaladrius configurar</code></pre>
-    <p>No Red Hat, Rocky e AlmaLinux, acrescente antes o <a href="https://docs.docker.com/engine/install/rhel/">repositório do Docker</a>.</p>
-
-    <h2>openSUSE</h2>
-<pre><code>sudo zypper addrepo https://packages.facchini.eti.br/rpm/facchini.repo
-sudo zypper install kaladrius
-sudo kaladrius configurar</code></pre>
-
+    <p class="suave">Repositórios de pacotes (apt, dnf e zypper) do software de <a href="https://www.facchini.eti.br">Miguel Facchini</a>, um por software. Como instalar está na documentação de cada um.</p>
+    <table>
+      <tr><th>Software</th><th>O quê</th><th>Repositório</th></tr>
+      <tr><td><a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a></td><td>Gestão de clínicas, para servidores Intel ou AMD de 64 bits</td><td><a href="kaladrius/">kaladrius/</a> · <a href="https://kaladrius-docs.facchini.eti.br/pt-BR/installation/linux-package">como instalar</a></td></tr>
+    </table>
     <h2>A chave</h2>
-    <p>Os repositórios e os pacotes <code>.rpm</code> são assinados com a <a href="chave.asc">chave</a> de impressão digital:</p>
+    <p>Todos os repositórios e os pacotes <code>.rpm</code> são assinados com a mesma <a href="facchini.asc">chave</a>, de impressão digital:</p>
     <p><code>9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA</code></p>
-    <p>O <code>dnf</code> e o <code>zypper</code> mostram essa impressão digital antes de confiar na chave: confira se é a mesma.</p>
   </section>
 
   <section id="es" lang="es">
     <h1>Paquetes Linux</h1>
-    <p class="suave">Repositorio de paquetes (apt, dnf y zypper) del software de Miguel Facchini. Hoy: <a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a>, para servidores con procesador Intel o AMD de 64 bits.</p>
-    <p>Con el repositorio agregado, las versiones nuevas llegan con las actualizaciones del propio sistema (<code>sudo apt upgrade</code>, <code>sudo dnf upgrade</code> o <code>sudo zypper update</code>). Antes de instalar, vea los <a href="https://kaladrius-docs.facchini.eti.br/es/installation/linux-package">sistemas admitidos y las preguntas de la instalación</a>.</p>
-
-    <h2>Debian 13+ y Ubuntu 24.04+</h2>
-<pre><code>sudo apt install -y curl ca-certificates
-sudo install -d -m 0755 /etc/apt/keyrings
-sudo curl -fsSLo /etc/apt/keyrings/facchini.asc https://packages.facchini.eti.br/chave.asc
-echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/facchini.asc] https://packages.facchini.eti.br/deb stable main" | sudo tee /etc/apt/sources.list.d/facchini.list
-sudo apt update
-sudo apt install kaladrius</code></pre>
-    <p>Las preguntas de la instalación aparecen enseguida.</p>
-
-    <h2>Fedora, Red Hat Enterprise Linux, Rocky Linux y AlmaLinux</h2>
-<pre><code>sudo curl -fsSLo /etc/yum.repos.d/facchini.repo https://packages.facchini.eti.br/rpm/facchini.repo
-sudo dnf install kaladrius
-sudo kaladrius configurar</code></pre>
-    <p>En Red Hat, Rocky y AlmaLinux, agregue antes el <a href="https://docs.docker.com/engine/install/rhel/">repositorio de Docker</a>.</p>
-
-    <h2>openSUSE</h2>
-<pre><code>sudo zypper addrepo https://packages.facchini.eti.br/rpm/facchini.repo
-sudo zypper install kaladrius
-sudo kaladrius configurar</code></pre>
-
+    <p class="suave">Repositorios de paquetes (apt, dnf y zypper) del software de Miguel Facchini, uno por software. Cómo instalar está en la documentación de cada uno.</p>
+    <table>
+      <tr><th>Software</th><th>Qué</th><th>Repositorio</th></tr>
+      <tr><td><a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a></td><td>Gestión de clínicas, para servidores Intel o AMD de 64 bits</td><td><a href="kaladrius/">kaladrius/</a> · <a href="https://kaladrius-docs.facchini.eti.br/es/installation/linux-package">cómo instalar</a></td></tr>
+    </table>
     <h2>La clave</h2>
-    <p>Los repositorios y los paquetes <code>.rpm</code> están firmados con la <a href="chave.asc">clave</a> de huella digital <code>9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA</code>. <code>dnf</code> y <code>zypper</code> muestran esa huella antes de confiar en la clave: compruebe que sea la misma.</p>
+    <p>Todos los repositorios y los paquetes <code>.rpm</code> están firmados con la misma <a href="facchini.asc">clave</a>, de huella digital:</p>
+    <p><code>9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA</code></p>
   </section>
 
   <section id="en" lang="en">
     <h1>Linux packages</h1>
-    <p class="suave">Package repository (apt, dnf and zypper) for Miguel Facchini's software. Today: <a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a>, for servers with a 64-bit Intel or AMD processor.</p>
-    <p>With the repository added, new versions come with the system's own updates (<code>sudo apt upgrade</code>, <code>sudo dnf upgrade</code> or <code>sudo zypper update</code>). Before installing, see the <a href="https://kaladrius-docs.facchini.eti.br/installation/linux-package">supported systems and the installation's questions</a>.</p>
-
-    <h2>Debian 13+ and Ubuntu 24.04+</h2>
-<pre><code>sudo apt install -y curl ca-certificates
-sudo install -d -m 0755 /etc/apt/keyrings
-sudo curl -fsSLo /etc/apt/keyrings/facchini.asc https://packages.facchini.eti.br/chave.asc
-echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/facchini.asc] https://packages.facchini.eti.br/deb stable main" | sudo tee /etc/apt/sources.list.d/facchini.list
-sudo apt update
-sudo apt install kaladrius</code></pre>
-    <p>The installation's questions appear right away.</p>
-
-    <h2>Fedora, Red Hat Enterprise Linux, Rocky Linux and AlmaLinux</h2>
-<pre><code>sudo curl -fsSLo /etc/yum.repos.d/facchini.repo https://packages.facchini.eti.br/rpm/facchini.repo
-sudo dnf install kaladrius
-sudo kaladrius configurar</code></pre>
-    <p>On Red Hat, Rocky and AlmaLinux, add <a href="https://docs.docker.com/engine/install/rhel/">Docker's repository</a> first.</p>
-
-    <h2>openSUSE</h2>
-<pre><code>sudo zypper addrepo https://packages.facchini.eti.br/rpm/facchini.repo
-sudo zypper install kaladrius
-sudo kaladrius configurar</code></pre>
-
+    <p class="suave">Package repositories (apt, dnf and zypper) for Miguel Facchini's software, one per software. How to install is in each one's documentation.</p>
+    <table>
+      <tr><th>Software</th><th>What</th><th>Repository</th></tr>
+      <tr><td><a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a></td><td>Clinic management, for 64-bit Intel or AMD servers</td><td><a href="kaladrius/">kaladrius/</a> · <a href="https://kaladrius-docs.facchini.eti.br/installation/linux-package">how to install</a></td></tr>
+    </table>
     <h2>The key</h2>
-    <p>The repositories and the <code>.rpm</code> packages are signed with the <a href="chave.asc">key</a> with fingerprint <code>9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA</code>. <code>dnf</code> and <code>zypper</code> show that fingerprint before trusting the key: check that it is the same.</p>
+    <p>Every repository and every <code>.rpm</code> package is signed with the same <a href="facchini.asc">key</a>, with fingerprint:</p>
+    <p><code>9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA</code></p>
   </section>
 </main>
 </body>

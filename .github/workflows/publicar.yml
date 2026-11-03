@@ -1,5 +1,5 @@
-# Builds the signed apt (/deb) and dnf/zypper (/rpm) repositories from the packages attached to
-# each project's GitHub releases (baixar.sh, construir.sh) and publishes them with site/ on
+# Builds the signed apt (/<name>/deb) and dnf/zypper (/<name>/rpm) repositories of each software
+# from the packages attached to its GitHub releases (baixar.sh, construir.sh) and publishes them with site/ on
 # GitHub Pages, at https://packages.facchini.eti.br. Runs on every push, every hour (a new
 # release shows up within the hour; nothing is published when no package changed), and by hand.
 name: Publicar
@@ -39,7 +39,7 @@ jobs:
       - name: Algo mudou?
         id: mudou
         run: |
-          (cd pacotes && ls -- *.deb *.rpm) | sort >versoes.txt
+          (cd pacotes && ls -- */*.deb */*.rpm) | sort >versoes.txt
           publicados=$(curl -fsS https://packages.facchini.eti.br/versoes.txt || true)
           if [ "$GITHUB_EVENT_NAME" = schedule ] && [ "$publicados" = "$(cat versoes.txt)" ]; then
             echo "Nenhum pacote novo."
