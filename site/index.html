@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pacotes Linux · facchini.eti.br</title>
-<meta name="description" content="Repositório de pacotes Linux (apt e dnf) do software de Miguel Facchini.">
+<meta name="description" content="Repositório de pacotes Linux (apt, dnf e zypper) do software de Miguel Facchini.">
 <style>
   :root { --fundo: #ffffff; --texto: #1f2328; --suave: #59636e; --linha: #d1d9e0; --codigo: #f6f8fa; --link: #0969da; }
   @media (prefers-color-scheme: dark) {
@@ -12,30 +12,111 @@
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--fundo); color: var(--texto); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 48px 16px; }
+  main { max-width: 800px; margin: 0 auto; padding: 40px 16px 64px; }
+  nav { font-size: .95rem; margin-bottom: 24px; }
+  nav a { margin-right: 12px; }
   h1 { font-size: 1.6rem; margin: 0 0 8px; }
-  h2 { font-size: 1.1rem; margin: 32px 0 8px; }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; }
   p { margin: 8px 0; }
   .suave { color: var(--suave); }
-  section + section { border-top: 1px solid var(--linha); margin-top: 32px; padding-top: 8px; }
+  section + section { border-top: 1px solid var(--linha); margin-top: 48px; padding-top: 16px; }
   a { color: var(--link); }
-  code { background: var(--codigo); padding: 2px 6px; border-radius: 4px; font-size: .9em; }
+  code { background: var(--codigo); padding: 2px 6px; border-radius: 4px; font-size: .9em; overflow-wrap: anywhere; }
+  pre { background: var(--codigo); padding: 12px 14px; border-radius: 6px; overflow-x: auto; font-size: .85rem; line-height: 1.5; }
+  pre code { background: none; padding: 0; overflow-wrap: normal; }
 </style>
 </head>
 <body>
 <main>
-  <section lang="pt-BR">
+  <nav><a href="#pt" lang="pt-BR">Português</a><a href="#es" lang="es">Español</a><a href="#en" lang="en">English</a></nav>
+
+  <section id="pt" lang="pt-BR">
     <h1>Pacotes Linux</h1>
-    <p class="suave">Repositório de pacotes (apt e dnf) do software de <a href="https://www.facchini.eti.br">Miguel Facchini</a>.</p>
-    <p>Em preparação: em breve o <a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a> poderá ser instalado e atualizado por aqui, com <code>apt upgrade</code> e <code>dnf upgrade</code>. Por enquanto, os pacotes ficam na <a href="https://github.com/facchini-miguel/kaladrius/releases/latest">página de releases</a>.</p>
+    <p class="suave">Repositório de pacotes (apt, dnf e zypper) do software de <a href="https://www.facchini.eti.br">Miguel Facchini</a>. Hoje: o <a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a>, para servidores com processador Intel ou AMD de 64 bits.</p>
+    <p>Com o repositório adicionado, as versões novas chegam com as atualizações do próprio sistema (<code>sudo apt upgrade</code>, <code>sudo dnf upgrade</code> ou <code>sudo zypper update</code>). Antes de instalar, veja os <a href="https://kaladrius-docs.facchini.eti.br/pt-BR/installation/linux-package">sistemas aceitos e as perguntas da instalação</a>.</p>
+
+    <h2>Debian 13+ e Ubuntu 24.04+</h2>
+<pre><code>sudo apt install -y curl ca-certificates
+sudo install -d -m 0755 /etc/apt/keyrings
+sudo curl -fsSLo /etc/apt/keyrings/facchini.asc https://packages.facchini.eti.br/chave.asc
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/facchini.asc] https://packages.facchini.eti.br/deb stable main" | sudo tee /etc/apt/sources.list.d/facchini.list
+sudo apt update
+sudo apt install kaladrius</code></pre>
+    <p>As perguntas da instalação aparecem na hora.</p>
+
+    <h2>Fedora, Red Hat Enterprise Linux, Rocky Linux e AlmaLinux</h2>
+<pre><code>sudo curl -fsSLo /etc/yum.repos.d/facchini.repo https://packages.facchini.eti.br/rpm/facchini.repo
+sudo dnf install kaladrius
+sudo kaladrius configurar</code></pre>
+    <p>No Red Hat, Rocky e AlmaLinux, acrescente antes o <a href="https://docs.docker.com/engine/install/rhel/">repositório do Docker</a>.</p>
+
+    <h2>openSUSE</h2>
+<pre><code>sudo zypper addrepo https://packages.facchini.eti.br/rpm/facchini.repo
+sudo zypper install kaladrius
+sudo kaladrius configurar</code></pre>
+
+    <h2>A chave</h2>
+    <p>Os repositórios e os pacotes <code>.rpm</code> são assinados com a <a href="chave.asc">chave</a> de impressão digital:</p>
+    <p><code>9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA</code></p>
+    <p>O <code>dnf</code> e o <code>zypper</code> mostram essa impressão digital antes de confiar na chave: confira se é a mesma.</p>
   </section>
-  <section lang="es">
-    <h2>Paquetes Linux</h2>
-    <p>Repositorio de paquetes (apt y dnf) del software de Miguel Facchini. En preparación: pronto Kaladrius podrá instalarse y actualizarse desde aquí. Por ahora, los paquetes están en la <a href="https://github.com/facchini-miguel/kaladrius/releases/latest">página de releases</a>.</p>
+
+  <section id="es" lang="es">
+    <h1>Paquetes Linux</h1>
+    <p class="suave">Repositorio de paquetes (apt, dnf y zypper) del software de Miguel Facchini. Hoy: <a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a>, para servidores con procesador Intel o AMD de 64 bits.</p>
+    <p>Con el repositorio agregado, las versiones nuevas llegan con las actualizaciones del propio sistema (<code>sudo apt upgrade</code>, <code>sudo dnf upgrade</code> o <code>sudo zypper update</code>). Antes de instalar, vea los <a href="https://kaladrius-docs.facchini.eti.br/es/installation/linux-package">sistemas admitidos y las preguntas de la instalación</a>.</p>
+
+    <h2>Debian 13+ y Ubuntu 24.04+</h2>
+<pre><code>sudo apt install -y curl ca-certificates
+sudo install -d -m 0755 /etc/apt/keyrings
+sudo curl -fsSLo /etc/apt/keyrings/facchini.asc https://packages.facchini.eti.br/chave.asc
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/facchini.asc] https://packages.facchini.eti.br/deb stable main" | sudo tee /etc/apt/sources.list.d/facchini.list
+sudo apt update
+sudo apt install kaladrius</code></pre>
+    <p>Las preguntas de la instalación aparecen enseguida.</p>
+
+    <h2>Fedora, Red Hat Enterprise Linux, Rocky Linux y AlmaLinux</h2>
+<pre><code>sudo curl -fsSLo /etc/yum.repos.d/facchini.repo https://packages.facchini.eti.br/rpm/facchini.repo
+sudo dnf install kaladrius
+sudo kaladrius configurar</code></pre>
+    <p>En Red Hat, Rocky y AlmaLinux, agregue antes el <a href="https://docs.docker.com/engine/install/rhel/">repositorio de Docker</a>.</p>
+
+    <h2>openSUSE</h2>
+<pre><code>sudo zypper addrepo https://packages.facchini.eti.br/rpm/facchini.repo
+sudo zypper install kaladrius
+sudo kaladrius configurar</code></pre>
+
+    <h2>La clave</h2>
+    <p>Los repositorios y los paquetes <code>.rpm</code> están firmados con la <a href="chave.asc">clave</a> de huella digital <code>9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA</code>. <code>dnf</code> y <code>zypper</code> muestran esa huella antes de confiar en la clave: compruebe que sea la misma.</p>
   </section>
-  <section lang="en">
-    <h2>Linux packages</h2>
-    <p>Package repository (apt and dnf) for Miguel Facchini's software. Being prepared: Kaladrius will soon be installed and updated from here. For now, the packages are on the <a href="https://github.com/facchini-miguel/kaladrius/releases/latest">releases page</a>.</p>
+
+  <section id="en" lang="en">
+    <h1>Linux packages</h1>
+    <p class="suave">Package repository (apt, dnf and zypper) for Miguel Facchini's software. Today: <a href="https://github.com/facchini-miguel/kaladrius">Kaladrius</a>, for servers with a 64-bit Intel or AMD processor.</p>
+    <p>With the repository added, new versions come with the system's own updates (<code>sudo apt upgrade</code>, <code>sudo dnf upgrade</code> or <code>sudo zypper update</code>). Before installing, see the <a href="https://kaladrius-docs.facchini.eti.br/installation/linux-package">supported systems and the installation's questions</a>.</p>
+
+    <h2>Debian 13+ and Ubuntu 24.04+</h2>
+<pre><code>sudo apt install -y curl ca-certificates
+sudo install -d -m 0755 /etc/apt/keyrings
+sudo curl -fsSLo /etc/apt/keyrings/facchini.asc https://packages.facchini.eti.br/chave.asc
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/facchini.asc] https://packages.facchini.eti.br/deb stable main" | sudo tee /etc/apt/sources.list.d/facchini.list
+sudo apt update
+sudo apt install kaladrius</code></pre>
+    <p>The installation's questions appear right away.</p>
+
+    <h2>Fedora, Red Hat Enterprise Linux, Rocky Linux and AlmaLinux</h2>
+<pre><code>sudo curl -fsSLo /etc/yum.repos.d/facchini.repo https://packages.facchini.eti.br/rpm/facchini.repo
+sudo dnf install kaladrius
+sudo kaladrius configurar</code></pre>
+    <p>On Red Hat, Rocky and AlmaLinux, add <a href="https://docs.docker.com/engine/install/rhel/">Docker's repository</a> first.</p>
+
+    <h2>openSUSE</h2>
+<pre><code>sudo zypper addrepo https://packages.facchini.eti.br/rpm/facchini.repo
+sudo zypper install kaladrius
+sudo kaladrius configurar</code></pre>
+
+    <h2>The key</h2>
+    <p>The repositories and the <code>.rpm</code> packages are signed with the <a href="chave.asc">key</a> with fingerprint <code>9D3A 0438 FF6C 00F9 1CA1 A0AB A5C3 35B2 EB36 7ABA</code>. <code>dnf</code> and <code>zypper</code> show that fingerprint before trusting the key: check that it is the same.</p>
   </section>
 </main>
 </body>

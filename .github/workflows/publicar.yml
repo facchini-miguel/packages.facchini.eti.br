@@ -1,9 +1,14 @@
-# Publishes site/ on GitHub Pages, at https://packages.facchini.eti.br.
+# Builds the signed apt (/deb) and dnf/zypper (/rpm) repositories from the packages attached to
+# each project's GitHub releases (baixar.sh, construir.sh) and publishes them with site/ on
+# GitHub Pages, at https://packages.facchini.eti.br. Runs on every push, every hour (a new
+# release shows up within the hour; nothing is published when no package changed), and by hand.
 name: Publicar
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "41 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -27,8 +32,35 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9  # v5.0.0
+      - name: Pacotes dos releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: ./baixar.sh
+      - name: Algo mudou?
+        id: mudou
+        run: |
+          (cd pacotes && ls -- *.deb *.rpm) | sort >versoes.txt
+          publicados=$(curl -fsS https://packages.facchini.eti.br/versoes.txt || true)
+          if [ "$GITHUB_EVENT_NAME" = schedule ] && [ "$publicados" = "$(cat versoes.txt)" ]; then
+            echo "Nenhum pacote novo."
+            echo "publicar=" >>"$GITHUB_OUTPUT"
+          else
+            echo "publicar=1" >>"$GITHUB_OUTPUT"
+          fi
+      - name: Ferramentas
+        if: steps.mudou.outputs.publicar
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends apt-utils createrepo-c rpm
+      - name: Repositórios assinados
+        if: steps.mudou.outputs.publicar
+        env:
+          GPG_CHAVE_PRIVADA: ${{ secrets.GPG_CHAVE_PRIVADA }}
+        run: ./construir.sh
+      - if: steps.mudou.outputs.publicar
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9  # v5.0.0
         with:
-          path: site
+          path: _site
       - id: pages
+        if: steps.mudou.outputs.publicar
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346  # v5.0.1
