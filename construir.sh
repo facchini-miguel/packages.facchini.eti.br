@@ -5,7 +5,8 @@
 #   /<name>/rpm  a dnf/zypper repository, every package signed, and <name>.repo
 # plus /versoes.txt, the packages published (the hourly run compares it to skip a deploy), and
 # a plain listing (index.html) in every folder, the home page included, like
-# packages.microsoft.com: how to install each software is in its own documentation.
+# packages.microsoft.com: how to install each software is in its own documentation, which the
+# home page's welcome text (boas-vindas.html) points to.
 # Everything is signed with the private key in GPG_CHAVE_PRIVADA, which must be the one in
 # site/facchini.asc (the key clients trust). The key lives only in a temporary GNUPGHOME.
 set -euo pipefail
@@ -94,9 +95,10 @@ listagem() {
     printf '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     printf '<title>packages.facchini.eti.br%s/</title>\n' "$caminho"
     printf '<style>body{font:15px/1.7 ui-monospace,monospace;margin:32px 16px}a{color:#0969da}'
+    printf 'section{font-family:system-ui,sans-serif;max-width:760px}h2{font-size:1.05rem;margin:20px 0 4px}p{margin:0 0 8px}'
     printf '@media(prefers-color-scheme:dark){body{background:#0d1117;color:#e6edf3}a{color:#4493f8}}</style>\n'
-    [ -n "$caminho" ] || acima=""
-    printf '</head>\n<body>\n<h1>packages.facchini.eti.br%s/</h1>\n%b' "$caminho" "$acima"
+    printf '</head>\n<body>\n<h1>packages.facchini.eti.br%s/</h1>\n' "$caminho"
+    if [ -z "$caminho" ]; then cat boas-vindas.html; else printf '%b' "$acima"; fi
     for item in "$pasta"/*/; do
       [ -d "$item" ] && printf '<a href="%s/">%s/</a><br>\n' "$(basename "$item")" "$(basename "$item")"
     done
