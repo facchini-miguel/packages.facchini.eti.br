@@ -4,9 +4,9 @@
 #                the apt source with the key inside it (deb822)
 #   /<name>/rpm  a dnf/zypper repository, every package signed, and <name>.repo
 # plus /versoes.txt, the packages published (the hourly run compares it to skip a deploy), and
-# a plain listing (index.html) in every folder, the home page included, like
-# packages.microsoft.com: how to install each software is in its own documentation, which the
-# home page's welcome text (boas-vindas.html) points to.
+# a listing (index.html) in every folder, the home page included, like packages.microsoft.com
+# but in facchini.eti.br's look (pagina/): how to install each software is in its own
+# documentation, which the home page's welcome text (pagina/boas-vindas.html) points to.
 # Everything is signed with the private key in GPG_CHAVE_PRIVADA, which must be the one in
 # site/facchini.asc (the key clients trust). The key lives only in a temporary GNUPGHOME.
 set -euo pipefail
@@ -86,26 +86,34 @@ gpgkey=$SITE/facchini.asc
 REPO
 }
 
-# A plain listing of a folder, like a web server's (GitHub Pages has none).
+# A listing of a folder, like a web server's (GitHub Pages has none), in facchini.eti.br's look:
+# the header with the language flags (pagina/cabecalho.html), the welcome text on the home page
+# only (pagina/boas-vindas.html), then the folders and files. The style and the language script
+# go inside each page, so the site has no file besides the repositories and the key.
 listagem() {
-  local pasta=$1 caminho=${1#_site} item tmp acima='<a href="../">../</a><br>\n'
+  local pasta=$1 caminho=${1#_site} item tmp
   tmp=$(mktemp)
   {
-    printf '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+    printf '<!doctype html>\n<html lang="en" data-idioma="en">\n<head>\n<meta charset="utf-8">\n'
     printf '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     printf '<title>packages.facchini.eti.br%s/</title>\n' "$caminho"
-    printf '<style>body{font:15px/1.7 ui-monospace,monospace;margin:32px 16px}a{color:#0969da}'
-    printf 'section{font-family:system-ui,sans-serif;max-width:760px}h2{font-size:1.05rem;margin:20px 0 4px}p{margin:0 0 8px}'
-    printf '@media(prefers-color-scheme:dark){body{background:#0d1117;color:#e6edf3}a{color:#4493f8}}</style>\n'
-    printf '</head>\n<body>\n<h1>packages.facchini.eti.br%s/</h1>\n' "$caminho"
-    if [ -z "$caminho" ]; then cat boas-vindas.html; else printf '%b' "$acima"; fi
+    printf '<style>\n'
+    cat pagina/estilo.css
+    printf '</style>\n<script>\n'
+    cat pagina/idioma.js
+    printf '</script>\n</head>\n<body>\n'
+    cat pagina/cabecalho.html
+    printf '<main class="largura">\n<h1>packages.facchini.eti.br%s/</h1>\n' "$caminho"
+    [ -n "$caminho" ] || cat pagina/boas-vindas.html
+    printf '<ul class="arquivos">\n'
+    [ -z "$caminho" ] || printf '<li><a href="../">../</a></li>\n'
     for item in "$pasta"/*/; do
-      [ -d "$item" ] && printf '<a href="%s/">%s/</a><br>\n' "$(basename "$item")" "$(basename "$item")"
+      [ -d "$item" ] && printf '<li><a href="%s/">%s/</a></li>\n' "$(basename "$item")" "$(basename "$item")"
     done
     for item in "$pasta"/*; do
-      [ -f "$item" ] && printf '<a href="%s">%s</a><br>\n' "$(basename "$item")" "$(basename "$item")"
+      [ -f "$item" ] && printf '<li><a href="%s">%s</a></li>\n' "$(basename "$item")" "$(basename "$item")"
     done
-    printf '</body>\n</html>\n'
+    printf '</ul>\n</main>\n</body>\n</html>\n'
   } >"$tmp"
   chmod 644 "$tmp"
   mv "$tmp" "$pasta/index.html"
