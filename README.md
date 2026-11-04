@@ -19,7 +19,7 @@ Every folder, the home page included, is a listing of its files, like packages.m
 
 ## How it is built
 
-`.github/workflows/publicar.yml` runs on every push, every hour and by hand:
+`.github/workflows/publish.yml` runs on every push, every hour and by hand:
 
 1. `baixar.sh` downloads into `pacotes/<name>/` the `.deb` and `.rpm` attached to each GitHub
    release of the projects it lists, each checked against its release's `SHA256SUMS`. Every
