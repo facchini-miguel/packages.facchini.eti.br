@@ -1,0 +1,122 @@
+# packages.facchini.eti.br on the VPS: a raw Compose in Dokploy (project "Packages"), created and
+# updated by deploy/setup.sh. Two services share the volume "packages":
+# - fetcher keeps a copy of the branch "publicado" of the public repository, where the workflow
+#   publish.yml writes the repositories already signed (the signing key never comes here),
+#   fetches it every 2 minutes and switches to a new commit at once;
+# - web (nginx) serves the current copy behind Dokploy's Traefik.
+services:
+  fetcher:
+    image: alpine:3.24.4
+    restart: unless-stopped
+    command: ["sh", "/fetch.sh"]
+    environment:
+      REPOSITORY: https://github.com/facchini-miguel/packages.facchini.eti.br.git
+      BRANCH: publicado
+      FETCH_EVERY: "120"
+    configs:
+      - source: fetch
+        target: /fetch.sh
+    volumes:
+      - packages:/srv/packages
+      - work:/work
+    networks: [default]
+    labels:
+      - packages.config=${CONFIG_HASH:-}
+
+  web:
+    image: nginx:1.30.6-alpine3.24
+    restart: unless-stopped
+    configs:
+      - source: nginx
+        target: /etc/nginx/conf.d/default.conf
+    volumes:
+      - packages:/srv/packages:ro
+    networks: [dokploy-network]
+    labels:
+      - packages.config=${CONFIG_HASH:-}
+      - traefik.enable=true
+      - traefik.docker.network=dokploy-network
+      - traefik.http.services.packages.loadbalancer.server.port=80
+      - traefik.http.middlewares.packages-compress.compress=true
+      - traefik.http.middlewares.packages-no-server.headers.customResponseHeaders.Server=
+      - traefik.http.middlewares.packages-https.redirectscheme.scheme=https
+      - traefik.http.middlewares.packages-https.redirectscheme.permanent=true
+      - traefik.http.routers.packages.rule=Host(`packages.facchini.eti.br`)
+      - traefik.http.routers.packages.entrypoints=websecure
+      - traefik.http.routers.packages.tls.certresolver=letsencrypt
+      - traefik.http.routers.packages.service=packages
+      - traefik.http.routers.packages.middlewares=packages-compress,packages-no-server
+      - traefik.http.routers.packages-http.rule=Host(`packages.facchini.eti.br`)
+      - traefik.http.routers.packages-http.entrypoints=web
+      - traefik.http.routers.packages-http.service=packages
+      - traefik.http.routers.packages-http.middlewares=packages-https
+
+networks:
+  dokploy-network:
+    external: true
+
+volumes:
+  packages:
+  work:
+
+configs:
+  fetch:
+    content: |
+      # Keeps /srv/packages/current pointing at a copy of the newest commit of the branch.
+      # A failed fetch is logged and the current copy stays; the next round tries again.
+      set -u
+      log() { echo "$$(date -u '+%F %T') $$*"; }
+      until apk add --no-cache -q git; do log "apk add git failed, again in 30 s"; sleep 30; done
+      mkdir -p /srv/packages/copies
+      while true; do
+        if [ -d /work/repo/.git ]; then
+          git -C /work/repo fetch -q --depth 1 origin "$$BRANCH" \
+            && git -C /work/repo reset -q --hard FETCH_HEAD || log "git fetch failed"
+        else
+          rm -rf /work/repo
+          git clone -q --depth 1 --branch "$$BRANCH" "$$REPOSITORY" /work/repo || log "git clone failed"
+        fi
+        commit=$$(git -C /work/repo rev-parse --short HEAD 2>/dev/null || true)
+        current=$$(readlink /srv/packages/current 2>/dev/null || true)
+        if [ -n "$$commit" ] && [ "$$current" != "copies/$$commit" ]; then
+          rm -rf "/srv/packages/copies/$$commit"
+          mkdir -p "/srv/packages/copies/$$commit"
+          (cd /work/repo && git archive HEAD) | tar -x -C "/srv/packages/copies/$$commit"
+          # A new symbolic link renamed over the old one: nginx sees the old copy or the new
+          # one, never half of each (an apt client reads InRelease, then the files it lists).
+          ln -sfn "copies/$$commit" /srv/packages/next && mv -Tf /srv/packages/next /srv/packages/current
+          log "published $$commit"
+          # Keeps the new copy and the one it replaced (a client may still be reading it).
+          for old in /srv/packages/copies/*; do
+            case "$$old" in
+              */"$$commit"|*/"$${current#copies/}") ;;
+              *) rm -rf "$$old" ;;
+            esac
+          done
+        fi
+        sleep "$$FETCH_EVERY"
+      done
+  nginx:
+    content: |
+      server {
+        listen 80 default_server;
+        server_name _;
+        root /srv/packages/current;
+        index index.html;
+        server_tokens off;
+        absolute_redirect off;
+        charset utf-8;
+        add_header X-Content-Type-Options nosniff always;
+        add_header Strict-Transport-Security "max-age=31536000" always;
+        add_header Cache-Control "no-cache" always;
+        location ~ /\. { return 404; }
+        location / { try_files $$uri $$uri/ =404; }
+        # The keys and the sources/repo files, readable in a browser.
+        location ~ \.(asc|sources|repo)$$ { default_type "text/plain"; }
+        # A package of a given version never changes.
+        location ~ \.(deb|rpm)$$ {
+          add_header X-Content-Type-Options nosniff always;
+          add_header Strict-Transport-Security "max-age=31536000" always;
+          add_header Cache-Control "public, max-age=86400" always;
+        }
+      }

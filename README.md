@@ -1,6 +1,6 @@
 # packages.facchini.eti.br
 
-Linux package repositories for Miguel Facchini's software, published on GitHub Pages at
+Linux package repositories for Miguel Facchini's software, served from the VPS at
 https://packages.facchini.eti.br, one folder per software. Today it carries
 [Kaladrius](https://github.com/facchini-miguel/kaladrius) (amd64). How to install each one is in
 its own documentation ([Kaladrius](https://kaladrius-docs.facchini.eti.br/installation/linux-package));
@@ -33,6 +33,21 @@ Every folder, the home page included, is a listing of its files, like packages.m
 
 The signing key's private part exists only in the repository secret `GPG_CHAVE_PRIVADA` and in
 the owner's offline backup. It is imported into a temporary GPG home that is deleted at the end.
+
+4. The result, already signed, replaces the branch `publicado` (a single commit without history,
+   so the repository does not grow with every version).
+
+## How it is served
+
+On the VPS, in Dokploy (project **Packages**, [`deploy/`](deploy/)): a fetcher fetches the branch
+`publicado` every 2 minutes and switches to a new commit at once (the old copy stays for clients
+still reading it); nginx serves it behind Dokploy's Traefik. The VPS only ever receives signed
+files: the private key never leaves GitHub, so a break-in on the VPS cannot sign packages. A new
+release is online within the hour plus 2 minutes.
+
+To change the server side (`deploy/compose.yml`), run `deploy/apply.sh` from your machine (it
+needs `ssh vps`): it creates or updates the Compose in Dokploy, deploys it and checks the
+repositories' files and the HTTPS certificate.
 
 ## Adding software
 
