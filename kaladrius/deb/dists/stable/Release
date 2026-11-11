@@ -1,0 +1,19 @@
+Architectures: amd64
+Codename: stable
+Components: main
+Date: Wed, 11 Nov 2026 12:55:16 +0000
+Label: kaladrius
+Origin: packages.facchini.eti.br
+Suite: stable
+MD5Sum:
+ 3361e6ea6cf9ca84a59becfd09b9acc6            31362 main/binary-amd64/Packages
+ 8e8a051c3d595dc4b3abe03f4c28c477             5774 main/binary-amd64/Packages.gz
+SHA1:
+ 9f383b1e056ea0a6610b41c08b79bfa152fd52cc            31362 main/binary-amd64/Packages
+ e43d79bda6b0b2e728d1fe07a78a48e51accda55             5774 main/binary-amd64/Packages.gz
+SHA256:
+ abe2836d8d3ed76b0dff903ad1579d1f84114a4345d93c72ca33762b3e2af07b            31362 main/binary-amd64/Packages
+ af6222101b027150e4ce3301ac7cb30501de504868873fc977a4cd73253cffa1             5774 main/binary-amd64/Packages.gz
+SHA512:
+ 4ea4cc41cfb208a225f38797f0bec9809e8fb9863ae3199d2234fcf108582ebf7ad947a4a3db5635bcfee8de41349e6f2c0facd47da425659e9b4aba5316097c            31362 main/binary-amd64/Packages
+ 81647a7a90bac3723a098205daad0b8f84c2c01e0463491143acc0317a7cb37d67576c2edfc14487423841b9cb8f511217b07e10c7716fe7807f36ef03cb51ba             5774 main/binary-amd64/Packages.gz

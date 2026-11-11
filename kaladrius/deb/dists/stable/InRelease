@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: amd64
+Codename: stable
+Components: main
+Date: Wed, 11 Nov 2026 12:55:16 +0000
+Label: kaladrius
+Origin: packages.facchini.eti.br
+Suite: stable
+MD5Sum:
+ 3361e6ea6cf9ca84a59becfd09b9acc6            31362 main/binary-amd64/Packages
+ 8e8a051c3d595dc4b3abe03f4c28c477             5774 main/binary-amd64/Packages.gz
+SHA1:
+ 9f383b1e056ea0a6610b41c08b79bfa152fd52cc            31362 main/binary-amd64/Packages
+ e43d79bda6b0b2e728d1fe07a78a48e51accda55             5774 main/binary-amd64/Packages.gz
+SHA256:
+ abe2836d8d3ed76b0dff903ad1579d1f84114a4345d93c72ca33762b3e2af07b            31362 main/binary-amd64/Packages
+ af6222101b027150e4ce3301ac7cb30501de504868873fc977a4cd73253cffa1             5774 main/binary-amd64/Packages.gz
+SHA512:
+ 4ea4cc41cfb208a225f38797f0bec9809e8fb9863ae3199d2234fcf108582ebf7ad947a4a3db5635bcfee8de41349e6f2c0facd47da425659e9b4aba5316097c            31362 main/binary-amd64/Packages
+ 81647a7a90bac3723a098205daad0b8f84c2c01e0463491143acc0317a7cb37d67576c2edfc14487423841b9cb8f511217b07e10c7716fe7807f36ef03cb51ba             5774 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEnToEOP9sAPkcoaCrpcM1sus2eroFAmr0ZbQACgkQpcM1sus2
+erqWZA/+P1/PAjCRLY+afQlYAQputV8YXzB+F4odq7kusPHQKSWLo9R1aq2WZZXQ
+n5cNJNGX2ZE0LVMZvlmTkt3O1xo+2bD/JsyCk6RZ1Uthioqv3yjvAlnBWYDDv7F6
+DYikylcsl3WYyfL6VfZrkdNstxv0SeUO/ZOMG3TD3xb7OwNOYflWqJEuAGAEEqg5
+K0LgEhcQ1rYx6XxvRANZKHAfOFbK2OplvdV84l8SFJnR8px5xhK2rSOW0CFXtshI
+km14rlh8BxUHlLPxFlzCyuDNohJpKmYzsUyWXO/EkRBAeLS+AkrY4WLoo1sXfNyZ
+Ho+fpogV1B64twJ1TxhkyTT+PYCYphb8ZSaQ370LPjfQrhlRqFzjhzM8dzW5H0PI
+8MI6jLazKd/EnZfEy09kzG6B3QrWQHEuW1/uurr+G+bsFzzndN6hBQgEcaWL1dnF
+laxnL0Ak1qpOIcGLbY0/lmapbp5hMMO5PrpuCQHz62t4JAC9qYX/bsQmGFz+wP+s
+U9TPQ3FgztmwcwU5J6WnoyfOaIPVo9GliWw3NxQL6o5b+Gh+ZaeOKq8qDwh/IOId
++UAM+M39lXEVtTO3GVEifFuKGV/wXtl30i6PtHRPK51Z74lV/NxsZCduSQyXSNra
+6ipUxRvpv7GfcGLfd3XOcl5bcOPpUn+REtVt91PwZ16DsecaOLI=
+=lMUk
+-----END PGP SIGNATURE-----

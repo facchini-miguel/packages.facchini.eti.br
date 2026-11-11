@@ -1,0 +1,616 @@
+Package: kaladrius
+Architecture: amd64
+Version: 0.54.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 80
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.54.0-1_amd64.deb
+Size: 32022
+MD5sum: a4780a5337ad1669de242d3fdf53e7be
+SHA1: 7762b3d844d21b101e12272239c23f370026df4f
+SHA256: 8b1a012d90bda23a5d2224c05d909b78857566c29bec6a5321ece0617b0c46ed
+SHA512: 8ca88cd00061f73d82e2472131c7a97c27f3080092516bdc89c13524cc404ee1f6342648e043ee39ef8bfb4a5ea1917cb069dbb3cce861aedb04576078e5fba0
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configurar
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.54.1-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 82
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.54.1-1_amd64.deb
+Size: 34660
+MD5sum: dfa5d190e3ecf6fe8e1b4145851a90db
+SHA1: f661208c7ee91cec3a9c2d6f664e132475e96ebd
+SHA256: 01f3130e0c9c0fb0a4c96a297a18e1795eb57671ea5373c980043a4e4002098b
+SHA512: 0268eee297ebf2a8c565842c62b087512bc5e99505a38d3ca915f389c1973b2043a09ee3274e94ffbc14377728dff4d10d0dcdfbe97c3871d156cf72c85f73ba
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configurar
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.55.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 89
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.55.0-1_amd64.deb
+Size: 37156
+MD5sum: 88bc0a3eef8d390b1bea99eea825704c
+SHA1: 9489d4cb52aa6a0d87518eae86c790af7be2d81a
+SHA256: e0864364518234fe55517659fa8bbb8cfef6a3328b29681bff4c1116380e0a22
+SHA512: b870646b5abf645f698483285cb509d7be669f69b096b9f92a23d97e3d9653e23b751c2508dea3db8cd0c88dd0f61ac6dcce8922ff14769c61a5ea90b0403312
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.56.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.56.0-1_amd64.deb
+Size: 37484
+MD5sum: 058c10400fa758f530b9c33f52cb7fab
+SHA1: ecb69a3415cf60a5906aa624b556b6c166cdd26e
+SHA256: 8d83afe4a01d8559f83d2c4db97d19d4ac9bedb8a745098cee272934dd2dcca6
+SHA512: 7206406f16ed357c1b4c5a5a1b14311159450df3cc40246799c5c267d9c2b2d103fef9d49c7853e19c942a36a264ae66a88bd0be833c5308a43a3207b1f5c95c
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.57.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.57.0-1_amd64.deb
+Size: 37492
+MD5sum: 7fe3985a3bb4547c60ace2917c2795b3
+SHA1: 511df6136a7cec575ffeda9d561d27d3d16e91b9
+SHA256: d25b93dde23b9a756280f0be6804b6c9a0b4fa9c5fd31deaea0020e22f25c065
+SHA512: afb1c00739b1f054b447e2449dd7ad01636a5a8de39cc176afe63941e7de625a7e4371b2f943252abb9804f68de99aba75447cbef1d7a4d64b69751052944b9d
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.58.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.58.0-1_amd64.deb
+Size: 37484
+MD5sum: 6bae3ebdaa02d166a8adb6fcb753902a
+SHA1: 30b47e85ff335c9c4a320bc2243dc40024d82c8f
+SHA256: 96b402c30e95e790a5727a462f8ffe30890fab2125e8c444f6b37ea345f94385
+SHA512: 8cb87fa210980d017197309d16c256e478bc4d3b0ef0501de4577a577bf273fb250d3a59adb227cf89fe20ce9fe5abb9b2a48186a552f308750137f436842d7e
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.59.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.59.0-1_amd64.deb
+Size: 37608
+MD5sum: d07208c72931ad5ae61721de4fc2f8ef
+SHA1: 510224d75a8faea54b46c5face67cc9d6051b9f6
+SHA256: c0170e41215777ef9a32cd801d6943d4d388f4fcb3fd732023a7c24b91745813
+SHA512: fc5605250d7b66f5eea0707a978d5c3437bc3f2793eed65de2dceaf69365e0b3007c2760206495e3251f4aaa1349562d9332507e3b8c138090acdaa2ab451295
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.59.1-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.59.1-1_amd64.deb
+Size: 37610
+MD5sum: f846b25130650abe8551739b8a93310d
+SHA1: b11f2f57ce1f4b456f8410c22955f360ee71d299
+SHA256: fbdcc9a270c67363a9542efd283b26d7d5197d6cfdc84523293f9c729e92bd82
+SHA512: e9488243f2f2a2993ceeb3a3c6325d823f19e1657f7e78eed5d5f85962e3cd8d3e786cc820b71aef4e2c1cfdfa774593c4865a9a915f7947c2fb77ccd5e03b4d
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.60.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.60.0-1_amd64.deb
+Size: 37610
+MD5sum: 9803b2159da005e3699daa2bd853a449
+SHA1: fe31ae6f5773147f0ad5d6324dcb8efe92ede1b2
+SHA256: cd9a43a4ee2c0b72b2af3b104d58ce3eae749e3c3bd81055fff353d0e9d0ad35
+SHA512: 0c5fa0dc0ed55582cadfdd8755e30035da5f0ecfe8f97c79bf6fb750412c25cd8637ac1c1110299bef634a4d90ac212f2e28ff8d4aa46e16e7a478966459bdf8
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.60.1-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.60.1-1_amd64.deb
+Size: 37610
+MD5sum: 591b4c51071c52287b8daa081c7746e3
+SHA1: 67f327dfe602043cb8dfb4c1b5b609cbfa0ee700
+SHA256: 8642e7757b9a6e92d0f3587c6c5a09e6551049703d527d441c0ff40ba7ea109f
+SHA512: ac5bf3248d000915bb99eab53e10073650a4b755bf19cc2182387446f133eade8a5cf8f4a7287e3e2c473b7a0cb568b5fe664d559196d8b1ab524dfe7858d9d7
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.60.2-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.60.2-1_amd64.deb
+Size: 37606
+MD5sum: 1348355be6b54bcb734bad93f867cfba
+SHA1: 60db0f5f847c339ac6ef4c3ae09e8b577cf58639
+SHA256: 4213f0ad7609398fb6265bedf4e4e0d86bbf5fbe85d3ef938b3a3d921aed7ce0
+SHA512: 1f6eb4fbfa91281b09a778126e98390518bdb1d8392fbb47ee02037042239025a5e7afeca791f5109dfba2c360714419e552346bbcaf770f2cef4fc035621d9b
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.61.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.61.0-1_amd64.deb
+Size: 37612
+MD5sum: b855a06e440d7e7aa15bf281705282f6
+SHA1: cb3f91faae16ed157a7a421327d0d49cebb18a1f
+SHA256: d8eed9741c156fdc03067ba1e213117f2c6fb46519196cb20f363c317f4f964e
+SHA512: 4f8aa57fb9d3ff888090c359f32cf3919383ec734f1f2885def737a0959d805d514d921bea82f98f2f1045ddacb7092e3c9d171a6d9459adb1ee8fb1cc587558
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.62.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.62.0-1_amd64.deb
+Size: 37606
+MD5sum: e73c289caeb76b59e0cfc003003ef369
+SHA1: ca933db78b9b266b54dd1aeebb3e27f61183561d
+SHA256: b49dffdc7d5b4b78b32123504f9aa66eddc8d861ae0ebd3a092ed00114811761
+SHA512: 5b01b3e8ee46c6005b25daccbc7a21e2868620d53f2de3c81bf52850348288b226ca97931da0f6d1a898411445e1d5c42a1e25165d1f530780ac40d34887438f
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.63.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.63.0-1_amd64.deb
+Size: 37556
+MD5sum: b418026d982103e2be9e152dfb2c65cb
+SHA1: 02d700254dba9382c71327547b784c8effd45ed8
+SHA256: 398e9c9ee03b409cdc1c7a8531f504bf23bbbe36bee9e3a8af84bf2c7ad75c42
+SHA512: 8394219ced58894aa55fa0ec99c2b214a1df75f87c4fb8329127a31b6236c1dba157d4fdce0f8fd0624b7ea47387f30d56b655090b63a06ec19f8a2baead527c
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.64.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.64.0-1_amd64.deb
+Size: 37560
+MD5sum: 094a8c80801fc92a4ee3f2353276e6e9
+SHA1: 2486fe2bb04918b2158a47cec8856ac4bea21c26
+SHA256: 3532fb28c67489e0a9b1a562f5d776a0ddfb2ad9eea3ee8a81fab8506896036b
+SHA512: 97ea853acf4858fcf8989d482193e720692b6349de876c102e6e6f5567bdf4b3d7e2a462f0bef8ed8b9b7534e0397bb2553f58c11eec6bee46e098c455fdfe27
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.65.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.65.0-1_amd64.deb
+Size: 37556
+MD5sum: 8fc1b6e585abce36a6d9fdd81422cc3e
+SHA1: d208f0528e4f8a432ecfa79042943ead8a857102
+SHA256: c567cdbbb0fa598930aef6305875f25bf4c42c09a77cc4b14e05b08ebeb12927
+SHA512: 341d1493f082ae60b0eae2e4edd0d2092ee916980c6220339ed237e38a2a0a733d83697c340f0a025f270089bb1dbe5f94e6b806794013044dcfc910e658eb1b
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.66.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.66.0-1_amd64.deb
+Size: 37554
+MD5sum: 0280ff1c03e54e6dc62d6f664a069f05
+SHA1: a91806c8e390fd23b177f3ab28d6e901178a4dc8
+SHA256: 77f92c94b781749ac25e577788a4bbb879414ca1032f31c1288d7fc9a6c10b29
+SHA512: 44f0ef55dd207c2f13a5427fdc32bc152a6bd1aa60af211fcf8adf7f2ab5bde39decf4dff67917fe3f981143be4a93f54f4e2765802f23eaa267927502f555f0
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.67.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.67.0-1_amd64.deb
+Size: 37558
+MD5sum: 8a1e4a0a78a782d176e114653061a872
+SHA1: 419b2b8d4aee3568716e023678f591a328eb39cb
+SHA256: 1b262e78f5c0d6b6e636b9ced4f78649e3760534994882dffd82ea85ba5f8e21
+SHA512: 8a906eae4b2c4bd72bca4c6f9ab118f1c3452571c52354c74fca0cd1ae28d5a55e565955c515eb2c48e0a499f199529ac9e34795ba9dd1a8938674a857909198
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.68.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.68.0-1_amd64.deb
+Size: 37558
+MD5sum: 60c6a23cf9804a0db9d15f67e5c7fe30
+SHA1: b8f8e0e18e854a7a09fe0d3a4158ca777461f0a3
+SHA256: 242c8d3053a05bc48f223d357d34e9fd70e728bab48fa851b058055008ad4a00
+SHA512: b5d7f1b97bd20547215e88a7f8eb998e5ebf0fced83485b32933f9bbeb549fe906d23228560ec3e41959bc0ff62fe166b6a86aae57c1d7aa648b08155f4f8484
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.69.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.69.0-1_amd64.deb
+Size: 37558
+MD5sum: 34b4dccb75584aa6dd895129699c7f96
+SHA1: 2c17188a158f5fbe418334102e8bc1657cd1d24d
+SHA256: 37e03de936df061be3d2b59368b12b071788f383bd6213b8bd9ee41a5a31fd7c
+SHA512: 7c2d8b7de339ea935a6aabae5ed6d578dd24c8a52dd124dfaf5317934ab386bc2ffaafb8e06ca339a560c3e39a23a8ab637f3a77590288568bfc0d4b9445396c
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.70.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.70.0-1_amd64.deb
+Size: 37558
+MD5sum: 46a198b4346de4c39ae9fd5c6fc3e482
+SHA1: 8660a967e3bead60020f74acb57a7f3d120d38d0
+SHA256: d81e95c7c48da4ae936b52c2eba5864eec5559eb570825bcf5196f58b2c071d0
+SHA512: d9944b9eed1ee53ba37d824aa7bbc7964899f69cfcf943ff8b7f83f465e23021422d617350b0b3a6ca735c3b44dfcadbb51e9d542c39d7a1dafdfae5a8466753
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.70.1-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.70.1-1_amd64.deb
+Size: 37558
+MD5sum: 4d6cea8b503295bfe6966a48fc5801bf
+SHA1: adb608ee106776fd810056e86239431a479f3acc
+SHA256: 873a426b63474945860f6a62b24fd808e5d5e15b7e27cd103818b8b4a0d845ee
+SHA512: a3545dc6e25e3adea51eb5c169693c198776cc2d6de63ac699082218eba367d4c4e821afb51aa29da35aea728d6e48a2f8f85b565ca9a447e4e80e77091596eb
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.71.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.71.0-1_amd64.deb
+Size: 37552
+MD5sum: 60fcfb79a59c7e0b825e1b0b6724c3a5
+SHA1: df4500b7290e7994f73616a9842045009da2a2fd
+SHA256: 5102b18149702e934f034e12ba25d2725d6970621647630ec60d332e399120fc
+SHA512: d14232f409a006b68e3eb2b5d2265fce03b998371832de5a84c45cb99efc9b3f53bec2b00349c0cc9efe198020302f38910e23a478744206109c7c73c84bf071
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.71.1-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.71.1-1_amd64.deb
+Size: 37604
+MD5sum: f329adf554c9ec605b85f360ed047d66
+SHA1: 0903584d1f66351807402e46b2aeeace000119d5
+SHA256: c016eccfa26ca03aff9e00a015879dcd4b3f34df0c0d217a9db24bb8540b87e9
+SHA512: 52d4fb8ddd5a4f6d14b8533d952608c104bf1bce3a8eea02128cc8cbee927db07b711de723ed0359f96b2cfa62cd0c373249ac79fc1212c208197ed1dc989cbf
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.71.2-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 91
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.71.2-1_amd64.deb
+Size: 37594
+MD5sum: 4a5d32601a79db65bf256b8cf6e285a6
+SHA1: 3f201ff860f5fb98b6a9896c7d9f19fa01bcca58
+SHA256: 4bbdb767571de117eadde06ffcd0ffd0eef0b8de3bcc39998b3454326d09bf28
+SHA512: af1013cdff9c4470f27b4d214aa5a4451e33b287714cbad0f6f9d39e6f53e6261ce566e33bd890d16c2fb0bfc9252bf2da9cbdc0f9c4bdfbd3df1b251970ac19
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.71.3-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 93
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.71.3-1_amd64.deb
+Size: 38214
+MD5sum: f050e4f40bc4d81cb0898235dea5c583
+SHA1: dd6d6ba95d3838102fd7d891a66d22bab9359871
+SHA256: 418a2bca7c331478a6e2fe19879b6cbfad26e160cd49a4370d0f41c5f070ba88
+SHA512: 9f30e89e21f95f0e405602731382eea8079e633f90493f93ef034e1c6edbad97fa105a87085e032eafc6eb08a2b05f9544eea4b3a5a8b29f61533c4eb02c4b1e
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.72.0-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 93
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.72.0-1_amd64.deb
+Size: 38220
+MD5sum: 2d5b21429ec887c44f6e1f642874f7ee
+SHA1: 48050eca3a81a1ebdd036dd1cb3e97bb15ca66c2
+SHA256: 1e73cdb8dbb2bf1bb9a340c7bce712b27e7229d6aaa41aed1a535989909ff14d
+SHA512: 544985b6e63a9296c47c5a676033e9b03ee7ce67b5b772f7703068554b1117553bf197b5e6e50ad93b3f9a84331e7cf5222714395ddf849adb63517754d22cf6
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
+Package: kaladrius
+Architecture: amd64
+Version: 0.72.1-1
+Priority: optional
+Section: misc
+Maintainer: Miguel Facchini <facchini-miguel@users.noreply.github.com>
+Installed-Size: 94
+Depends: docker.io (>= 24) | docker-ce, docker-compose (>= 2) | docker-compose-v2 | docker-compose-plugin, curl, iproute2
+Recommends: whiptail
+Filename: pool/main/kaladrius_0.72.1-1_amd64.deb
+Size: 38718
+MD5sum: 5235f63c34e574b977687787b6d16786
+SHA1: 75b53200e42f130ef82f803c3c25b3165aafdbae
+SHA256: ee1c849a4fee4f2d9fbf56985c7e02bb13a079debc55154430ca0449c741551a
+SHA512: 8f830ae2660c0b189e245839549a2d5fa021d5051a602eb9c473fd82c8d494aef967d75c16b19ac1df12be96373ade8e0a1efeb57350b561269d0ae8fbfa4bd3
+Homepage: https://github.com/facchini-miguel/kaladrius
+Description: Clinic management system (Kaladrius)
+ Patients, schedule, medical records, budgets, finances and the clinic's team, in a web app
+ for the clinic's internal network or the internet. Runs in Docker containers (PostgreSQL,
+ Caddy with HTTPS), with daily backups, a weekly restore test and automatic rollback of a
+ failed update. After installing: sudo kaladrius configure
+
