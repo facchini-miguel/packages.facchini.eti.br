@@ -1,7 +1,10 @@
 # Builds the signed apt (/<name>/deb) and dnf/zypper (/<name>/rpm) repositories of each software
-# from the packages attached to its GitHub releases (baixar.sh, construir.sh) and publishes them with site/ on
-# GitHub Pages, at https://packages.facchini.eti.br. Runs on every push, every hour (a new
-# release shows up within the hour; nothing is published when no package changed), and by hand.
+# from the packages attached to its GitHub releases (baixar.sh, construir.sh) and writes them,
+# ready to serve, to the branch "publicado" (one commit, replaced each time). The VPS fetches that
+# branch every 2 minutes and serves it at https://packages.facchini.eti.br (deploy/). The signing
+# key never leaves GitHub: the VPS only receives files already signed. Runs on every push, every
+# hour (a new release shows up within the hour; nothing is published when no package changed),
+# and by hand.
 name: Publish
 
 on:
@@ -15,19 +18,14 @@ permissions:
   contents: read
 
 concurrency:
-  group: pages
+  group: publish
   cancel-in-progress: false
 
 jobs:
   publish:
     runs-on: ubuntu-24.04
     permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.pages.outputs.page_url }}
+      contents: write  # only the last step uses it, to replace the branch "publicado"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
@@ -40,7 +38,8 @@ jobs:
         id: changed
         run: |
           (cd pacotes && ls -- */*.deb */*.rpm) | sort >versoes.txt
-          published=$(curl -fsS https://packages.facchini.eti.br/versoes.txt || true)
+          published=$(git fetch -q --depth 1 origin publicado 2>/dev/null \
+            && git show FETCH_HEAD:versoes.txt || true)
           if [ "$GITHUB_EVENT_NAME" = schedule ] && [ "$published" = "$(cat versoes.txt)" ]; then
             echo "No new package."
             echo "publish=" >>"$GITHUB_OUTPUT"
@@ -57,10 +56,17 @@ jobs:
         env:
           GPG_CHAVE_PRIVADA: ${{ secrets.GPG_CHAVE_PRIVADA }}
         run: ./construir.sh
-      - if: steps.changed.outputs.publish
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9  # v5.0.0
-        with:
-          path: _site
-      - id: pages
+      # A single commit without history, so the repository does not grow with every version.
+      - name: Branch "publicado"
         if: steps.changed.outputs.publish
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346  # v5.0.1
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd _site
+          git init -q -b publicado
+          git add -A
+          git -c user.name="github-actions[bot]" \
+            -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Signed repositories from $GITHUB_SHA"
+          git push -q --force \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" publicado
