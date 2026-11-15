@@ -1,0 +1,16 @@
+# Structural files. A pull request that changes any of them needs an approval
+# from @facchini-miguel before it can be merged (ruleset "Protect main").
+# Everything else (the pages under pagina/, README) is merged without it.
+
+# CI (it signs and publishes the repositories), Dependabot and this file
+/.github/                       @facchini-miguel
+
+# The server: compose file and the scripts that set it up and apply changes
+/deploy/                        @facchini-miguel
+
+# Scripts that download the packages and build the signed repositories
+/baixar.sh                      @facchini-miguel
+/construir.sh                   @facchini-miguel
+
+# The public signing key users install
+/site/facchini.asc              @facchini-miguel
