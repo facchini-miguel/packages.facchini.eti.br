@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: amd64
+Codename: stable
+Components: main
+Date: Wed, 25 Nov 2026 20:13:35 +0000
+Label: kaladrius
+Origin: packages.facchini.eti.br
+Suite: stable
+MD5Sum:
+ 323e2238a19f28e21276b1d4bd8517ea            34722 main/binary-amd64/Packages
+ a59899fff4e8ab4d79c93bca8d17d2a9             6313 main/binary-amd64/Packages.gz
+SHA1:
+ fb840faccebdd8496bcc3f96e90d62983a46a0bb            34722 main/binary-amd64/Packages
+ ec619e9f996f51be578c7b767d3e0cb0a7563193             6313 main/binary-amd64/Packages.gz
+SHA256:
+ b54d68ca007425f12430e4ff5c8ad8e83f7432032c75a04154adc3845439e451            34722 main/binary-amd64/Packages
+ 450e479599f63a7c1787fb032f36c3dfbd3a54288bb8ff7ee609793e35b86ceb             6313 main/binary-amd64/Packages.gz
+SHA512:
+ 64db38e416559a8b2e5eef053bf54d2ee0124ad2363feeb37d15772ef8ade21ec5a1b1ff9e1e8525544d82e647f088ca16959632300cfbb393bd18d552197031            34722 main/binary-amd64/Packages
+ 6c5c9158fa34f269fe382ec43a84dd3177d29bc098a0626a4c1582c0096b859eb42a14254a01d2287f92f0bea00df78e36020cf5e80a3c15f49113c98b706a67             6313 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEnToEOP9sAPkcoaCrpcM1sus2eroFAmsHQW8ACgkQpcM1sus2
+erpIrw//ZGox0M3F9YmJJQalJm+Tpf5lW54VgFxGJDaGSyFu8J5/PcZiHtTv3cCn
+7Rl0hyHPnakINVBGRgZ+6tSkhHgP2BNeteZqMRlWJ1gVgs7kYzzbJi22kZCzqRjo
+zmTyRy1EQrWKB5HYcz3tcE33yRc9/WJicLcB0lGqCoVm/5Mf9bGlRs2wDW9K3aZ0
+ILxr+GRAdVYgKHrQuLy6+k0WGhgjskzcWlBVJMw0wKTxo733LwpUIUwPmmlpwt6F
+YVvolwkLgu2EXz6TZ93ZFSE9RTy4OOyfetqtPAQDT1xQHEzMkZTiGuSVOihlXOMj
+xoaMSNPzAY8w8ldORaB4o4yEWIUkIi+nqaouOOPmgQTeGqGAG47wsOHOY+KMCI53
+iuUmH8vabOKxyUsKIcbIUUuWmXPVejRW82KjSXXu2VPgg6p7mQEXdWxota16DI1J
+jBw/TohZUBvhTILSrvhjh9BrHLOUcHYP/FZPMgDsCs3Oet04j/Swb7vZGLFmmCQP
+KkZSnXvPOu5WezITJGz9qEsDJ5f8oiopK2hZjzcc7WmJAsmbdrLDA+Z5nnEbMKh6
+/bcJolIfQGJ1uRiM7R8w2o5BHn5OApLGG6i54+YIrPNTlvKa/Xj/t+qyAu9+ncvr
+0omSJfpklMSiNcaUAO0/RruXjeFyIKPQbb3x1tic5rOoPFEEXxc=
+=DbEo
+-----END PGP SIGNATURE-----
